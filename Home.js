@@ -16,7 +16,7 @@ import { useNavigation } from '@react-navigation/native';
 const Home = () => {
     const navigation = useNavigation();
 
-    // Function to render icons for section headers
+
     const getSectionIcon = (title) => {
         switch (title) {
             case 'Fast Food':
@@ -32,18 +32,18 @@ const Home = () => {
         }
     };
 
-    // Function to calculate total calories
+
     const calculateTotalCalories = () => {
         let totalCalories = 0;
 
-        // Add up calories from all sections
+
         datasource.forEach((section) => {
             section.data.forEach((item) => {
                 totalCalories += item.calories;
             });
         });
 
-        // Determine if calorie intake exceeds the recommended daily intake
+
         const maleExceeded = totalCalories > 2500 ? 'Yes' : 'No';
         const femaleExceeded = totalCalories > 2000 ? 'Yes' : 'No';
 
